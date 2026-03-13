@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal Beauty | Celebrating Your Unique Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hot-pink: #f255af;
+            --light-pink: #fce4ec;
+            --promo-pink: #f7b4d8;
+            --mint-bg: #ccf2f4;
+            --border-black: #1a1a1a;
+            /* New Ethereal Gradient Colors */
+            --ethereal-yellow: #fff9e6;
+            --ethereal-blue: #e0f7fa;
+            --ethereal-pink: #fce4ec;
+        }
+
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0; 
+            color: #333; 
+            overflow-x: hidden;
+            /* Full Page Gradient Addition */
+            background: linear-gradient(135deg, var(--ethereal-yellow) 0%, var(--ethereal-blue) 50%, var(--ethereal-pink) 100%);
+            background-attachment: fixed;
+        }
+
+        /* 1. TOP ANNOUNCEMENT BAR */
+        .announcement-bar {
+            background-color: var(--promo-pink);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* 2. FULL NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo img {
+    height: 70px;  /* Adjust the size here */
+    width: 70px;   /* Make height and width equal for a perfect circle */
+    object-fit: cover; /* Keeps the logo image centered if it's not square */
+    border-radius: 50%; /* The key command for the circle effect */
+    border: 3px solid var(--ethereal-pink); /* (Optional) Adds a nice soft frame */
+    display: inline-block;
+    vertical-align: middle;
+}
+        
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: #333; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-icons { display: flex; gap: 20px; font-size: 18px; cursor: pointer; }
+
+        /* 3. HERO SECTION */
+        .hero { 
+            display: flex; 
+            height: 550px; 
+            background: white; 
+            margin: 20px 5%; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+            .hero-right {
+    position: relative; /* This keeps the arrows inside the photo box */
+    background-image: url('photo1.jpg'); /* Your first default photo */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out; /* Makes the change smooth */
+}
+
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    color: #333;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.slider-btn:hover { background: white; color: var(--hot-pink); }
+
+.prev { left: 20px; }  /* Positions left arrow */
+.next { right: 20px; } /* Positions right arrow */
+        }
+        .hero-text { 
+            width: 45%; 
+            padding: 60px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+        }
+        .hero-text h1 { font-size: 65px; line-height: 0.85; margin: 0; font-weight: 800; text-transform: uppercase; color: #1a1a1a; }
+        .outline-txt { color: white; -webkit-text-stroke: 2px #1a1a1a; }
+        .pink-txt { color: var(--hot-pink); }
+        
+        .hero-image { 
+            width: 55%; 
+            background: url('hero.jpg') center/cover; 
+            background-color: var(--light-pink);
+        }
+        
+        .btn-go {
+            margin-top: 35px;
+            padding: 16px 50px;
+            border: 2px solid var(--hot-pink);
+            background: white;
+            color: var(--hot-pink);
+            border-radius: 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-go:hover { background: var(--hot-pink); color: white; }
+
+        
+        
+
+        /* 4. BEST SELLERS GRID */
+        .best-sellers { padding: 80px 5%; text-align: center; }
+        .best-sellers h2 { font-weight: 800; font-size: 28px; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 30px; }
+        
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            position: relative;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .product-card:hover { transform: translateY(-10px); }
+
+        /* Update this in your <style> section */
+.product-card img { 
+    width: 100%; 
+    height: 220px; 
+    object-fit: contain; /* Ensures jewelry doesn't look squished */
+    margin-top: 20px; 
+    transition: transform 0.3s ease; /* Prepares for the hover effect */
+}
+
+/* Add this right below it to make images zoom slightly when hovered */
+.product-card:hover img { 
+    transform: scale(1.08); 
+}
+        .badge {
+            position: absolute; top: 15px; left: 50%; transform: translateX(-50%);
+            background: var(--light-pink); color: var(--hot-pink); padding: 6px 15px;
+            border-radius: 12px; font-size: 10px; font-weight: 800;
+        }
+        
+        .product-card img { width: 100%; height: 200px; object-fit: contain; margin-top: 20px; }
+
+        .product-name { font-size: 14px; font-weight: 700; margin: 20px 0 8px; text-transform: uppercase; color: #444; }
+        .product-price { font-weight: 800; font-size: 20px; margin-bottom: 20px; color: #000; }
+        
+        .btn-add {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--border-black);
+            background: white;
+            border-radius: 35px;
+            font-weight: 800;
+            font-size: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+        .btn-add:hover { background: var(--border-black); color: white; }
+
+        /* 5. BUILDER PREVIEW SECTION */
+        .builder-section { background-color: var(--mint-bg); display: flex; padding: 80px 10%; align-items: center; border-radius: 30px; margin: 0 5%; }
+        .builder-info { width: 50%; padding-left: 50px; }
+        .builder-info h2 { font-size: 36px; font-weight: 800; line-height: 1.1; margin-bottom: 25px; }
+        .step-list { list-style: none; padding: 0; }
+        .step-list li { margin: 20px 0; font-weight: 700; display: flex; align-items: center; gap: 20px; font-size: 15px; }
+        .step-num { 
+            background: var(--hot-pink); color: white; border-radius: 50%; 
+            width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 14px; 
+        }
+
+        /* 6. REVIEWS CAROUSEL */
+        .reviews-section { padding: 100px 5%; text-align: center; }
+        .review-grid { display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap; }
+        .review-card { width: 280px; text-align: center; background: white; padding: 35px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        .stars { color: var(--hot-pink); margin-bottom: 15px; font-size: 20px; }
+        .rev-circle { 
+            width: 90px; height: 90px; border-radius: 50%; background: var(--ethereal-blue); 
+            margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 40px;
+            border: 3px solid white; box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+
+        /* 7. DETAILED FOOTER */
+        footer { background-color: var(--light-pink); padding: 80px 10% 40px; margin-top: 80px; }
+        .footer-top { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr) 2fr; 
+            gap: 50px; 
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding-bottom: 60px;
+        }
+        .footer-col h4 { font-weight: 800; text-transform: uppercase; font-size: 15px; margin-bottom: 30px; color: #333; }
+        .footer-col ul { list-style: none; padding: 0; font-size: 13px; line-height: 2.5; font-weight: 600; color: #555; }
+        .footer-col ul li:hover { color: var(--hot-pink); cursor: pointer; }
+        
+        .join-list { text-align: left; }
+        .email-input-wrap {
+            display: flex; background: white; border-radius: 40px; padding: 6px;
+            border: 1px solid #eee; margin-top: 25px;
+        }
+        .email-input-wrap input { border: none; padding: 15px 25px; flex: 1; border-radius: 40px; outline: none; font-family: 'Montserrat'; }
+        .email-input-wrap button { 
+            background: black; color: white; border: none; padding: 0 35px; 
+            border-radius: 35px; font-weight: 800; text-transform: uppercase; font-size: 12px; cursor: pointer;
+        }
+        .socials { margin-top: 25px; font-size: 24px; display: flex; gap: 20px; }
+
+        .hero-image {
+    width: 55%; /* Keeps the split layout */
+    position: relative; /* CRITICAL: This lets us position the arrows absolutely INSIDE this box */
+    
+    /* SETTING THE INITIAL IMAGE (Photo 1) so it's not blank when the page loads */
+    background: url('ger.jpg') center/cover;
+    background-color: var(--ethereal-pink); /* Placeholder background color */
+    
+    /* ADD A SMOOTH TRANSITION FOR PITCH-PERFECT CHANGE */
+    transition: background-image 0.5s ease-in-out;
+    
+    border-radius: 20px; /* Optional: rounds the corners of the photo */
+    overflow: hidden; /* Optional: ensures the photo rounds with the corner */
+}
+
+/* Base styles for both arrows */
+.slider-btn {
+    position: absolute;
+    top: 50%; /* Vertical center of the photo */
+    transform: translateY(-50%); /* Fine-tune centering */
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white circle */
+    color: var(--hot-pink); /* Arrow icon is hot pink to match brand */
+    border: none;
+    padding: 15px 20px; /* Size of the button */
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%; /* Make them perfectly circular */
+    transition: 0.3s;
+    z-index: 10; /* Ensures buttons stay above the photo */
+}
+
+/* Hover effect: make arrows brighter and more solid pink */
+.slider-btn:hover { 
+    background-color: white; 
+    color: white;
+    background-color: var(--hot-pink);
+}
+
+/* Position Left Arrow */
+.prev { left: 20px; } 
+
+/* Position Right Arrow */
+.next { right: 20px; }
+
+/* Add this anywhere inside your <style> tags */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(242, 85, 175, 0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(242, 85, 175, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(242, 85, 175, 0); }
+}
+
+/* Find your .btn-go and add the animation line */
+.btn-go {
+    margin-top: 35px;
+    padding: 16px 50px;
+    border: 2px solid var(--hot-pink);
+    background: white;
+    color: var(--hot-pink);
+    border-radius: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    /* Add this line below */
+    animation: pulse 2s infinite; 
+}
+
+/* ABOUT SECTION STYLES */
+.about-ethereal {
+    padding: 80px 5%;
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white to show the page gradient */
+    margin: 40px 5%;
+    border-radius: 30px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(242, 85, 175, 0.1);
+}
+
+.about-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    font-style: italic;
+    color: var(--hot-pink);
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.about-content .intro-text {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 18px;
+}
+
+.ethereal-link {
+    color: var(--hot-pink);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid var(--hot-pink);
+    transition: 0.3s;
+}
+
+.ethereal-link:hover {
+    letter-spacing: 1px;
+    background: var(--light-pink);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">✨ FREE SHIPPING ON ALL ORDERS OVER ₱1,000 | SHOP ETHEREAL ✨</div>
+
+    <nav>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="ETHEREAL BEAUTY">
+        </a>
+        <div class="nav-links">
+            <a href="#">Charms</a>
+            <a href="#">Jewelry</a>
+            <a href="#">Collabs</a>
+            <a href="#">Bracelet Builders</a>
+            <a href="#">Gifting</a>
+        </div>
+        <div class="nav-icons">🔍 ♡ 👤 🛒</div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+           <h1 style="text-transform: none; font-size: 50px;">iba ka't</h1>
+            <h1 style="text-transform: none; color: #f255af;">walang katulad.</h1>
+            <button class="btn-go">GO NOW!</button>
+        </div>
+       <div class="hero-image" id="hero-slider">
+        <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    </section>
+
+    <section class="about-ethereal" id="who-we-are">
+    <div class="about-container">
+        <div class="about-image-box">
+            <img src="whoweare.jpg" alt="Ethereal Girls">
+        </div>
+        <div class="about-content">
+            <h1>Who We Are</h1>
+            <p class="intro-text">HELLO! We're ETHEREAL BEAUTY, the ultimate charm and accessory experience designed for your unique self.</p>
+            <p>We believe it's the little things—the details, the surprises, and the quality—that have the biggest impact. Our mission is to cultivate <b>CONFIDENCE</b> and empower everyone to express themselves through our curated collections.</p>
+            <p>With a focus on timeless yet ever-evolving designs, safety and quality are our commitments. Find us online and on the wrists of happy people everywhere!</p>
+            <a href="https://www.highintencity.com" class="ethereal-link">Visit our creators</a>
+        </div>
+    </div>
+</section>
+
+    <section class="best-sellers">
+        <h2>The Latest Faves... check out these BEST SELLERS!</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">BEST SELLER</div>
+                <img src="chains.jpg" alt="Swan Charm">
+                <p class="product-name">Costumized Bling-Bling Charms</p>
+                <p class="product-price">₱49</p>
+                <button class="btn-add">ADD TO CART</button>
+            </div>
+            <div class="product-card">
+                 <div class="badge">BEST SELLER</div>
+                <img src="RKeychain.jpg" alt="Butterfly Charm">
+                <p class="product-name">Rectangular Keychains</p>
+                <p class="product-price">₱49</p>
+                 <button class="btn-add">ADD TO CART</button>
+            </div>
+            <div class="product-card">
+                <div class="badge">BEST SELLER</div>
+                <img src="HKeychain.jpeg" alt="Ribbon Charm">
+                <p class="product-name">Heart Keychains</p>
+                <p class="product-price">₱49</p>
+                <button class="btn-add">ADD TO CART</button>
+            </div>
+            <div class="product-card">
+                <div class="badge">BEST SELLER</div>
+                <img src="fuzzies.jpg" alt="Sparkle Charm">
+                <p class="product-name">Fuzzies</p>
+                <p class="product-price">₱50</p>
+                <button class="btn-add">ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="builder-section">
+    <div style="width:50%">
+        <img src="builder.jpg" style="width:100%; border-radius:20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+    </div>
+    <div class="builder-info">
+        <h2>LET'S BUILD YOUR CHARM BRACELET!</h2>
+        <ul class="step-list">
+            <li><span class="step-num">1</span> Select Your Charm Jewelry</li>
+            <li><span class="step-num">2</span> Add Some Charms</li>
+            <li><span class="step-num">3</span> Mix & Match</li>
+        </ul>
+        <button class="btn-add" style="width:auto; padding: 18px 50px; margin-top: 20px; font-size: 14px;">GET STARTED!</button>
+    </div>
+</section>
+
+    <section class="reviews-section">
+        <h2>THE REVIEWS ARE IN!</h2>
+        <div class="stars">★★★★★</div>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="rev-circle">📿</div>
+                <p><b>"Obsessed!"</b><br>Boy was I impressed when I opened my order. I am addicted!</p>
+                <p><b>- Cheryl</b></p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="rev-circle">🥤</div>
+                <p><b>"Perfect Gift"</b><br>The charms are so cute and well-made. Can't wait for more.</p>
+                <p><b>- Taylor C.</b></p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="rev-circle">🎀</div>
+                <p><b>"Simply Ethereal"</b><br>Very cute... these were for my granddaughter's birthday.</p>
+                <p><b>- Nancy R.</b></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <ul><li>Who We Are</li><li>Contact Us</li><li>FAQs</li><li>Wholesale</li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Good to Know</h4>
+                <ul><li>Product Safety</li><li>Product Care</li><li>Shipping & Returns</li><li>Privacy Policy</li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul><li>Instagram</li><li>TikTok</li><li>Facebook</li></ul>
+                <div class="socials">
+    <a href="https://instagram.com/etherealbeautymnl" target="_blank" style="text-decoration:none;">📸</a>
+    <a href="https://facebook.com/etherealbeautymnl" target="_blank" style="text-decoration:none;">📘</a>
+    <a href="https://tiktok.com/@etherealbeautymnl" target="_blank" style="text-decoration:none;">🎵</a>
+</div>
+            </div>
+            <div class="footer-col join-list">
+                <h4>Join the List & Get 10% Off!</h4>
+                <p style="font-size:13px; line-height:1.6;">Stay ethereal! Be the first to know about new charms and exclusive drops.</p>
+                <div class="email-input-wrap">
+                    <input type="email" placeholder="Email Address">
+                    <button>Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <p style="text-align:center; font-size:11px; color:#888; margin-top:50px; font-weight:600; text-transform:uppercase; letter-spacing:1px;">
+            © 2026 Ethereal Beauty MNL. Iba ka't, walang katulad. 
+        </p>
+    </footer>
+<script>
+    // List your 5 photo names exactly as they appear in your folder
+    const images = [
+        'ger.jpg', 
+        'chains.jpg', 
+        'bracelets.jpg', 
+        'hairpin.jpg', 
+        'fuzzy.jpg'
+    ];
+
+    let currentIndex = 0; // The index of the currently displayed image
+
+    // Find the HTML slider element by its ID
+    const slider = document.getElementById('hero-slider'); 
+
+    // The function that runs when an arrow is clicked
+    function changeSlide(direction) {
+        // Calculate the next image index based on click direction
+        currentIndex += direction;
+
+        // Logic Loop: If they click "next" on the last image, go back to the first.
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        
+        // Logic Loop: If they click "prev" on the first image, loop to the last image.
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+
+        // Change the background image of the slider div.
+        // This line physically updates the photo.
+        slider.style.backgroundImage = `url('${images[currentIndex]}')`;
+    }
+</script>
+</body>
+</html>
